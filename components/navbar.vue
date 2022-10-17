@@ -32,11 +32,11 @@
 
                     <a href="#contacts" class="navbar-item is-clickable has-text-info">İletişim</a>
 
-                    <!-- <nuxt-link v-if="$store.getters['admin/getAuth']" @click.native="close" :to="{ name: 'dashboard' }" -->
-                        <!-- tag="a" class="navbar-item is-clickable is-active has-text-info">Yönetim paneli</nuxt-link> -->
+                    <nuxt-link v-if="$store.getters['admin/getAuth']" @click.native="close" :to="{ name: 'dashboard' }"
+                        tag="a" class="navbar-item is-clickable is-active has-text-info">Yönetim paneli</nuxt-link>
 
-                    <!-- <a v-if="$store.getters['admin/getAuth']" @click="$store.dispatch('admin/signOut'), close()" -->
-                        <!-- class="navbar-item is-clickable is-active has-text-info">Çıkış</a> -->
+                    <a v-if="$store.getters['admin/getAuth']" @click="$store.dispatch('admin/signOut'), close()"
+                        class="navbar-item is-clickable is-active has-text-info">Çıkış</a>
                 </div>
             </div>
         </div>

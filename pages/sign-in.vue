@@ -1,6 +1,6 @@
 <template>
     <div class="column">
-        <form @submit.prevent>
+        <form @submit.prevent="$store.dispatch('admin/signIn', admin)">
             <div class="field">
                 <div class="control has-icons-left">
                     <input v-model="admin.username" class="input is-rounded" type="text" placeholder="Kullanıcı adı"

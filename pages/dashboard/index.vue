@@ -6,7 +6,8 @@
 
         <div id="references" class="column mt-6 pt-6">
             <div class="columns is-centered is-multiline">
-                <div v-for="reference in this.$store.getters['reference/getReferences']" :key="reference._id" class="column is-one-third">
+                <div v-for="reference in this.$store.getters['reference/getReferences']" :key="reference._id"
+                    class="column is-one-third">
                     <Card :data="reference" type="admin" />
                 </div>
             </div>
@@ -14,3 +15,9 @@
     </div>
 </template>
 
+
+<script>
+export default {
+    middleware: "auth"
+}
+</script>
