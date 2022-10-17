@@ -15,5 +15,6 @@ export const actions = {
 
         await commit('admin/setToken', token)
         await dispatch('admin/isAuth')
+        await dispatch('reference/references')
     }
 }
