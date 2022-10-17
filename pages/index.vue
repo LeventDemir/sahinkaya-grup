@@ -16,7 +16,8 @@
 
     <div class="mt-6 pt-6" id="references">
       <div class="columns is-multiline is-centered mt-6 pt-6">
-        <div v-for="reference in references" :key="reference._id" class="column is-half">
+        <div v-for="reference in $store.getters['reference/getHomePageReferences']" :key=" reference._id"
+          class="column is-half">
           <Card :data="reference" />
         </div>
       </div>
@@ -33,32 +34,6 @@
 
 <script>
 export default {
-  layout: "home",
-  data() {
-    return {
-      references: [
-        {
-          _id: 1,
-          photo: "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1600",
-          description: "sddsds"
-        },
-        {
-          _id: 2,
-          photo: "https://images.pexels.com/photos/164558/pexels-photo-164558.jpeg?auto=compress&cs=tinysrgb&w=1600",
-          description: "sddsds"
-        },
-        {
-          _id: 3,
-          photo: "https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1600",
-          description: "sddsds"
-        },
-        {
-          _id: 4,
-          photo: "https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=1600",
-          description: "sddsds"
-        },
-      ]
-    }
-  },
+  layout: "home"
 }
 </script>
