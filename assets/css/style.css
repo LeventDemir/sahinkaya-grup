@@ -1,0 +1,67 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.hero-bg {
+    background: url("../../static/hero4.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.is-clickable {
+    cursor: pointer;
+}
+
+.card {
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.card-behavior {
+    display: inline-block;
+    height: 76px !important;
+    overflow: hidden;
+}
+
+.card:hover {
+    box-shadow: 0 5px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-item:hover {
+    background: none !important;
+}
+
+.hide-file-input {
+    position: absolute;
+    margin-top: 20px;
+    opacity: 0;
+}
+
+.is-read {
+    overflow: hidden;
+    border: none !important;
+}
+
+.logo {
+    width: 40ch;
+}
+
+
+@media screen and (max-width: 768px) {
+    .logo {
+        width: 25ch !important;
+    }
+}
+
+.page-leave-to, .layout-leave-to {
+    opacity: 0;
+    transition: .5s;
+}
+
+.page-enter-active, .layout-enter-active {
+    transition: opacity .7s;
+}
+
+.page-enter, .layout-enter {
+    opacity: 0;
+}
