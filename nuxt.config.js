@@ -35,6 +35,8 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    // https://www.npmjs.com/package/@nuxtjs/bulma
+    '@nuxtjs/bulma'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
