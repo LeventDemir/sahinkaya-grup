@@ -5,11 +5,11 @@
         <hr />
 
         <p class="has-text-centered">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.It has
-            survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
-            unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-            passages, and more recently with desktop publishing software like Aldus PageMaker including versions of
-            Lorem Ipsum.
+            Şahinkaya Grup olarak; Bodrum'da “İnşaat, Hafriyat ve Emlak Sektöründe”
+            uzun yıllardır hizmet vermekteyiz. Uzun yıllara dayanan tecrübemiz ve nitekli personel kadromuzla
+            müşteri memnuniyetini sağlamaktayız. Şahinkaya Grup olarak
+            müşteri memnuniyeti odaklı olarak yürütülen süreçlerde, kalite standartları ile oluşturulan denetim
+            mekanizması, her zaman ön planda tutulur.
         </p>
 
         <hr />
