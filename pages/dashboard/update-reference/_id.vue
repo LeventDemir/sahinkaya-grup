@@ -1,6 +1,6 @@
 <template>
     <div class="column">
-        <form @submit.prevent>
+        <form @submit.prevent="$store.dispatch('reference/update', reference)">
             <input @change="handleFileUpload" ref="photoInput" class="hide-file-input" type="file" accept="image/*"
                 :required="reference.photo ? false : true" />
 
@@ -44,20 +44,23 @@ export default {
     middleware: "auth",
     data() {
         return {
-            reference: {},
+            reference: {
+                id: null,
+                photo: null,
+                description: null,
+                status: false
+            },
         };
     },
-    async mounted() {
-        await this.$store.getters['reference/getReferences'].map(reference => {
+    mounted() {
+        this.$store.getters['reference/getReferences'].map(reference => {
             if (reference._id == this.$route.params.id) {
-                this.reference = reference
+                this.reference.id = reference._id
+                this.reference.photo = reference.photo
+                this.reference.description = reference.description
+                this.reference.status = reference.status
             }
         })
-
-        const textarea = document.getElementsByTagName("textarea")[0];
-        const height = textarea.scrollHeight;
-
-        textarea.style.cssText = "height:" + height + "px";
     },
     methods: {
         handleFileUpload(e) {

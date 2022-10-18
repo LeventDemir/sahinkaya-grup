@@ -1,6 +1,6 @@
 <template>
     <div class="column">
-        <form @submit.prevent>
+        <form @submit.prevent="$store.dispatch('reference/create', reference)">
             <input @change="handleFileUpload" ref="photoInput" class="hide-file-input" type="file" accept="image/*"
                 :required="reference.photo ? false : true" />
 
