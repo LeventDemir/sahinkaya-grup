@@ -43,7 +43,7 @@ export const actions = {
         this.$axios.post('/reference/update', { token: rootGetters['admin/getToken'], ...reference })
             .then(response => {
                 if (response.data.success) {
-                    this.$toast.global.success('Ürün güncellendi')
+                    this.$toast.global.success('Referans güncellendi')
 
                     dispatch('references')
 
@@ -55,7 +55,7 @@ export const actions = {
         this.$axios.post('/reference/delete', { token: rootGetters['admin/getToken'], id })
             .then(response => {
                 if (response.data.success) {
-                    this.$toast.global.success('Ürün silindi')
+                    this.$toast.global.success('Referans silindi')
 
                     dispatch('references')
                 } else this.$toast.global.error('Bir hata oluştu')
