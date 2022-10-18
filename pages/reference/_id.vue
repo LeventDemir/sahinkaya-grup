@@ -7,8 +7,11 @@
         <hr />
 
         <p>
-            <textarea ref="description" class="textarea has-fixed-size is-read" readonly
-                v-model="reference.description" />
+            <client-only>
+
+                <textarea ref="description" class="textarea has-fixed-size is-read" readonly
+                    v-model="reference.description" />
+            </client-only>
         </p>
 
         <hr />
@@ -36,16 +39,21 @@ export default {
     data() {
         return {
             reference: {
-                photo: "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1600",
-                description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                              
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`
+                photo: null,
+                description: null
             }
         }
     },
-    mounted() {
+    async mounted() {
+        await this.$store.getters['reference/getReferences'].map(reference => {
+            if (reference._id == this.$route.params.id) {
+                this.reference = reference
+            }
+        })
+
         const textarea = document.getElementsByTagName("textarea")[0];
         const height = textarea.scrollHeight;
+
         textarea.style.cssText = "height:" + height + "px";
     }
 };

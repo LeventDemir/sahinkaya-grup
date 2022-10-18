@@ -65,9 +65,5 @@ export const actions = {
         return this.$axios.get('/reference/references').then(response => {
             if (response.data.references) commit('setReferences', response.data.references)
         })
-    },
-    // reference({ }, id) {
-    //     return this.$axios.get('/reference/reference', { params: { id } })
-    //         .then(response => { if (response.data.reference) return response.data.reference })
-    // }
+    }
 }

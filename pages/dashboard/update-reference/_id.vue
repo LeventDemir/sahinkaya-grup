@@ -47,6 +47,18 @@ export default {
             reference: {},
         };
     },
+    async mounted() {
+        await this.$store.getters['reference/getReferences'].map(reference => {
+            if (reference._id == this.$route.params.id) {
+                this.reference = reference
+            }
+        })
+
+        const textarea = document.getElementsByTagName("textarea")[0];
+        const height = textarea.scrollHeight;
+
+        textarea.style.cssText = "height:" + height + "px";
+    },
     methods: {
         handleFileUpload(e) {
             const files = e.target.files || e.dataTransfer.files;
